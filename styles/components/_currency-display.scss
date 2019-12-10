@@ -1,0 +1,39 @@
+.currency-display {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.currency-display__title {
+    margin-right: 5px;
+}
+
+.currency-display__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.currency-display__item {
+    display: inline-block;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.currency-display__coin-image {
+    display: inline-block;
+    margin: 0 8px 0 1px;
+}
+
+.currency-display__gold {
+    color: #d4af37;
+}
+
+.currency-display__silver {
+    color: #c0c0c0;
+}
+
+.currency-display__copper {
+    color: #b87333;
+}

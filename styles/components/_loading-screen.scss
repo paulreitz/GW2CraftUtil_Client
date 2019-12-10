@@ -1,0 +1,18 @@
+.loading-screen {
+    width: 100wh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-screen__container {
+    text-align: center;
+    font-size: 3.5rem;
+    color: $dark-gray;
+}
+
+.loading-screen__spinner {
+    width: 7rem;
+    height: 6rem;
+}

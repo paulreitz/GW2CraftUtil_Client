@@ -1,0 +1,70 @@
+.item-display {
+    width: 32rem;
+    height: 45rem;
+    background: darken($darker-gray, 10%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: $m-size;
+    padding-right: $s-size;
+    color: $light-gray;
+    border-width: 2px !important;
+}
+
+.item-display__header {
+    display: flex;
+    justify-content: start;
+    align-content: top;
+    font-size: 1.3rem;
+
+    img {
+        margin: $s-size;
+    }
+}
+
+.item-display__details {
+    margin: 0 $s-size $s-size $s-size;
+}
+
+.item-display__flag {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: $gray
+}
+
+.item-display__upgrade {
+    color: $rarity-masterwork;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.item-display__infusion-container {
+    font-size: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-items: center;
+    margin: $s-size;
+
+    span {
+        margin-left: $s-size;
+    }
+}
+
+.item-display__infusion {
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+
+    div {
+        width: 5px;
+        height: 5px;
+        border: 1px solid white;
+        border-radius: 25%;
+        margin: auto;
+        background: white;
+    }
+}

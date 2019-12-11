@@ -3,9 +3,7 @@
     flex-wrap: wrap;
     align-items: flex-start;
     overflow-y: scroll;
-    max-height: 100%;
-    position: relative;
-    // flex-grow: 1;
+    height: 100%;
 }
 
 .main-page--no-results {

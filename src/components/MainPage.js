@@ -3,10 +3,6 @@ import { connect } from 'react-redux';
 import ItemDisplay from './ItemDisplay';
 
 export class MainPage extends React.Component {
-    // state = {
-    //     items: []
-    // }
-    
     render() {
         console.log(this.props);
         return (

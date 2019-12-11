@@ -8,7 +8,9 @@ export class MainPage extends React.Component {
         return (
             <div className="main-page">
                 {this.props.search.results && this.props.search.results.length
-                    ? this.props.search.results.map((item) => (<ItemDisplay key={item.id} {...item}/>))
+                    ? (<div className="main-page__items-container">
+                        {this.props.search.results.map((item) => (<ItemDisplay key={item.id} {...item}/>))}
+                    </div>)
                     : (
                         <div className="main-page--no-results">
                             <div className="main-page--no-results__message">

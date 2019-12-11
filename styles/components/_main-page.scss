@@ -1,7 +1,13 @@
 .main-page {
+    height: 100%;
+    position: relative;
+}
+
+.main-page__items-container {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    position: absolute;
     overflow-y: scroll;
     height: 100%;
 }

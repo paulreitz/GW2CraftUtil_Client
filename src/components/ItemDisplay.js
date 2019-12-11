@@ -1,15 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import CurrencyDisplay from './CurrencyDisplay';
 import { addSpaces } from '../utils/addSpaces';
+import State from '../utils/state';
+import { setState } from '../actions/stateAction';
+import { serverCall } from '../services/requestService';
 
-export default class ItemDisplay extends React.Component {
+export class ItemDisplay extends React.Component {
     detailsClassName = "item-dipslay__details";
 
     render() {
         const imageSize = 52;
         return (
             <div className={`item-display ${this.props.rarity.toLowerCase()}-border`}>
-                <div className="item-display__action-area">
+                <div onClick={this.itemSelect} className="item-display__action-area">
                     <div className="item-display__header">
                         <img src={this.props.icon} width={imageSize} height={imageSize} className={`${this.props.rarity.toLowerCase()}-border`} />
                         <h3 className={this.props.rarity.toLowerCase()}>{this.props.name.replace(/\&lsquo;/g, `'`)}</h3>
@@ -25,6 +29,15 @@ export default class ItemDisplay extends React.Component {
                 </div>
             </div>
         )
+    }
+
+    itemSelect = () => {
+        this.props.setState(State.SEARCHING_RECIPE);
+        serverCall(`recipes/${this.props.id}`).then((data) => {
+            // TODO: Set recipe to store (need to update the store for recipes first)
+            this.props.setState(State.DISPLAY_TREE);
+        })
+
     }
 
     getDisplayDetails() {
@@ -297,4 +310,10 @@ const Infusions = (props) => {
         </div>
     );
 }
+
+const mapDispatchToProps = (dispatch) => ({
+    setState: (state) => dispatch(setState(state))
+});
+
+export default connect(undefined, mapDispatchToProps)(ItemDisplay);
 

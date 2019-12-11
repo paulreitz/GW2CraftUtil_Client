@@ -19,7 +19,7 @@ export class ItemDisplay extends React.Component {
                         <h3 className={this.props.rarity.toLowerCase()}>{this.props.name.replace(/\&lsquo;/g, `'`)}</h3>
                     </div>
                     <div className="item-display__details">
-                        {this.getDisplayDetails(this.props)}
+                        {this.getDisplayDetails()}
                     </div>
                 </div>
                 <div>

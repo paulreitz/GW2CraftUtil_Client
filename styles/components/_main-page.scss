@@ -17,6 +17,6 @@
 .main-page--no-results__message {
     font-size: 3.5rem;
     width: 75%;
-    color: $dark-gray;
+    color: darken($dark-gray, 15%);
     text-align: center;
 }

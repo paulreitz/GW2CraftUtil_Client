@@ -22,6 +22,11 @@
     }
 }
 
+.item-display__action-area {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
 .item-display__details {
     margin: 0 $s-size $s-size $s-size;
 }

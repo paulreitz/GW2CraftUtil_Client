@@ -1,18 +1,20 @@
 .header {
-    background: $dark-highlight;
+    background: darken($darker-gray, 20%);
 }
 
 .header__content {
     align-items: center;
     display: flex;
-    justify-content: center;
-    padding: $s-size 0;
+    // justify-content: center;
+    // padding: $s-size 0;
+    margin-left: $m-size;
 }
 
 .header__title {
-    color: $rarity-rare;
+    color: $dark-gray;
+    font-size: 1.8rem;
     text-decoration: none;
-    h1 {
+    h2 {
         margin: 0;
     }
 }

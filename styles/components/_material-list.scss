@@ -1,0 +1,22 @@
+.materials-list {
+    width: 22rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.materials-list__title {
+    text-align: center;
+}
+
+.materials-list--no-mats {
+    flex-grow: 1;
+}
+
+.materials-list--no-mats__message {
+    text-align: center;
+    color: darken($dark-gray, 15%);
+    margin-top: 10rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}

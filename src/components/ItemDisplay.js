@@ -8,7 +8,7 @@ export default (props) => {
     const imageSize = 52;
     return (
         <div className={`item-display ${props.rarity.toLowerCase()}-border`}>
-            <div>
+            <div className="item-display__action-area">
                 <div className="item-display__header">
                     <img src={props.icon} width={imageSize} height={imageSize} className={`${props.rarity.toLowerCase()}-border`} />
                     <h3 className={props.rarity.toLowerCase()}>{props.name.replace(/\&lsquo;/g, `'`)}</h3>

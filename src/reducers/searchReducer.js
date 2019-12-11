@@ -1,4 +1,4 @@
-const defaultSearchResults = [];
+const defaultSearchResults = {results: []};
 
 export default (state = defaultSearchResults, action) => {
     switch (action.type) {

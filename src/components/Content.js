@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import MainPage from './MainPage';
 import LoadingScreen from './LoadingScreen';
+import RecipePage from './RecipePage';
 import State from '../utils/state';
 
 export class Content extends React.Component {
@@ -23,6 +24,8 @@ export class Content extends React.Component {
                 return (<LoadingScreen message="Fetching Search Results..." />);
             case State.SEARCHING_RECIPE: 
                 return (<LoadingScreen message="Getting Item Base Materials" />);
+            case State.DISPLAY_TREE: 
+                return (<RecipePage />);
             default:
                 return (<div>Unhandled State...</div>)
         }

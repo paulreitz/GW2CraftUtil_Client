@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import StateReducer from '../reducers/stateReducer';
 import SearchReducer from '../reducers/searchReducer';
 import MaterialsReducer from '../reducers/materialsReducer';
+import RecipeReducer from '../reducers/recipeReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -11,7 +12,8 @@ export default () => {
         combineReducers({
             state: StateReducer,
             search: SearchReducer,
-            materials: MaterialsReducer
+            materials: MaterialsReducer,
+            recipe: RecipeReducer
         }),
         composeEnhancers(applyMiddleware(thunk))
     );

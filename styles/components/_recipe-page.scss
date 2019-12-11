@@ -1,0 +1,37 @@
+.recipe-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.recipe-page__header {
+    background: $darker-gray;
+    color: $light-gray;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 $xs-size;
+    cursor: pointer;
+
+    span {
+        padding: $xs-size .2rem;
+    }
+}
+
+.recipe-page__content {
+    flex-grow: 1;
+    display: flex;
+}
+
+.recipe-page--no-recipe {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipe-page--no-recipe__message {
+    font-size: 3.5rem;
+    color: darken($dark-gray, 15%);
+    text-align: center;
+}

@@ -3,3 +3,18 @@
     flex-wrap: wrap;
     align-items: flex-start;
 }
+
+.main-page--no-results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100vh;
+}
+
+.main-page--no-results__message {
+    font-size: 3.5rem;
+    width: 75%;
+    color: $dark-gray;
+    text-align: center;
+}

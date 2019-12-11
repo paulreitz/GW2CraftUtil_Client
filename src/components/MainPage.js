@@ -4,7 +4,6 @@ import ItemDisplay from './ItemDisplay';
 
 export class MainPage extends React.Component {
     render() {
-        console.log(this.props);
         return (
             <div className="main-page">
                 {this.props.search.results && this.props.search.results.length

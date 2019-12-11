@@ -43,7 +43,6 @@ export class SearchFilter extends React.Component {
             types,
             rarities
         };
-        console.log(data);
 
         serverCall('items/search', data)
         .then((results) => {

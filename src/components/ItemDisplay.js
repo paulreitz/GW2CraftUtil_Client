@@ -218,7 +218,6 @@ export class ItemDisplay extends React.Component {
     
     getBack() {
         const details  = JSON.parse(this.props.details);
-        console.log(details);
         return (
             <div className={this.detailsClassName}>
                 <div>Back Item</div>

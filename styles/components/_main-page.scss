@@ -2,14 +2,18 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    overflow-y: scroll;
+    max-height: 100%;
+    position: relative;
+    // flex-grow: 1;
 }
 
 .main-page--no-results {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 .main-page--no-results__message {

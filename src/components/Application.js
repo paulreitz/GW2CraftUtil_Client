@@ -7,7 +7,7 @@ import MaterialList from './MaterialList';
 class Application extends React.Component {
     render() {
         return (
-            <div>
+            <div className="application">
                 <Header />
                 <div className="application__viewport">
                     <SearchFilter />

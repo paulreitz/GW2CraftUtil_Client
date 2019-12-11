@@ -1,7 +1,19 @@
-.application__viewport {
-    width: 100vw;
-    height: 100vh;
+#app {
+    height: 100%;
+}
+
+.application {
     display: flex;
-    justify-content: space-between;
+    flex-flow: column;
+    height:100%;
+}
+
+.application__viewport {
+    // width: 100vw;
+    // height: 100vh;
+    display: flex;
+    flex: 1;
+    justify-content: start;
     padding: 0 $m-size;
 }
+

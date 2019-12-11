@@ -21,6 +21,8 @@ export class Content extends React.Component {
                 return (<LoadingScreen message="Initializing App, Please wait..."/>);
             case State.SEARCHING:
                 return (<LoadingScreen message="Fetching Search Results..." />);
+            case State.SEARCHING_RECIPE: 
+                return (<LoadingScreen message="Getting Item Base Materials" />);
             default:
                 return (<div>Unhandled State...</div>)
         }

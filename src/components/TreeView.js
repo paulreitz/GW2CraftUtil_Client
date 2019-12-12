@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Tree from '../tree/tree';
 import TreeDisplay from '../tree/treeDisplay';
+import Dragger from '../utils/dragger';
 import { setMaterials } from '../actions/materialsAction';
 
 export class TreeView extends React.Component {
@@ -19,6 +20,15 @@ export class TreeView extends React.Component {
                 </div>
             </div>
             )
+    }
+
+    updateTreeViewLocation = (x, y) => {
+        const moveX = isNaN(x) ? 0 : x;
+        const moveY = isNaN(y) ? 0 : y;
+        this.setState((previousState) => ({
+            treeX: previousState.treeX + moveX,
+            treeY: previousState.treeY + moveY
+        }));
     }
 
     componentDidMount() {
@@ -40,7 +50,9 @@ export class TreeView extends React.Component {
             return {
                 treeX: left
             }
-        })
+        });
+        const dragger = new Dragger();
+        dragger.makeElementDraggable('tree-view__display', this.updateTreeViewLocation);
     }
 }
 

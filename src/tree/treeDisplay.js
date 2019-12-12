@@ -43,7 +43,6 @@ export default class TreeDisplay {
             return false;
         }
         const center = Math.ceil(node.parent.children.length / 2);
-        console.log(`name: ${node.data.item.name}index: ${node.data.parentIndex}, center: ${center}`);
         return false;
     }
 

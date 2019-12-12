@@ -18,5 +18,12 @@
 
 #tree-view__display {
     position: absolute;
-    cursor: grab;
+}
+
+.dragger--grab {
+    cursor: grab
+}
+
+.dragger--grabbing {
+    cursor: grabbing
 }

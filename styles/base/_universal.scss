@@ -61,3 +61,11 @@
 .legendary-border {
     border: 1px solid $rarity-legendary;
 }
+
+.button {
+    background: $darker-gray;
+    color: $gray;
+    padding: $s-size 0;
+    border: none;
+    font-weight: 700;
+}

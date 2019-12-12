@@ -108,19 +108,27 @@ export class SearchFilter extends React.Component {
     render() {
         return (
             <aside className="search-filter">
-                <h3>Search Filters</h3>
-                <form onSubmit={this.onFilterUpdate} className="search-filter__form">
-                    <input type="text" placeholder="Text Search Disabled" />
-                    <div>
-                        <div>Min Level: <input onChange={this.onMinLevelChange} name="minLevel" type="number" value={this.state.minLevel} /></div>
-                        <div>Max Level: <input onChange={this.onMaxLevelChange} name="maxLevel" type="number" value={this.state.maxLevel} /></div>
-                    </div>
-                    Filter by Type:
-                    {this.state.types.map((type) => (<span key={type}><input type="checkbox" name={type} value={type}/>{addSpaces(type)}</span>))}
-                    Filter by Rarity:
-                    {this.state.rarities.map((rarity) => (<span key={rarity}><input type="checkbox" name={rarity} value={rarity} />{rarity}</span>))}
-                    <button>Update Filters</button>
-                </form>
+                <div className="search-filter__container">
+                    <h3>Search Filters</h3>
+                    <form onSubmit={this.onFilterUpdate} className="search-filter__form">
+                        <div className="search-filter__form-group">
+                            <input type="text" placeholder="Text Search Disabled" />
+                        </div>
+                        <div className="search-filter__form-group">
+                            <div><label className="search-filter__form-label">Min Level: </label><input onChange={this.onMinLevelChange} name="minLevel" type="number" value={this.state.minLevel} /></div>
+                            <div><label className="search-filter__form-label">Max Level: </label><input onChange={this.onMaxLevelChange} name="maxLevel" type="number" value={this.state.maxLevel} /></div>
+                        </div>
+                        <div className="search-filter__form-group">
+                            <label className="search-filter__form-label">Filter by Type:</label>
+                            {this.state.types.map((type) => (<span key={type}><input type="checkbox" name={type} value={type}/>{addSpaces(type)}</span>))}
+                        </div>
+                        <div className="search-filter__form-group">
+                        <label className="search-filter__form-label">Filter by Rarity:</label>
+                            {this.state.rarities.map((rarity) => (<span key={rarity}><input type="checkbox" name={rarity} value={rarity} />{rarity}</span>))}
+                        </div>
+                        <button className="button">Update Filters</button>
+                    </form>
+                </div>
             </aside>
         );
     }

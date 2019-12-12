@@ -5,7 +5,7 @@
 }
 
 .tree-view__container {
-    // position: absolute;
+    position: relative;
     // left: 0;
     // right: 0;
     // bottom: 0;
@@ -17,4 +17,6 @@
 }
 
 #tree-view__display {
+    position: absolute;
+    cursor: grab;
 }

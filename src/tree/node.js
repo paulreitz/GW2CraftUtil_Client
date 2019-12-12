@@ -5,6 +5,8 @@ export default class Node {
     itemId = -1;
     children = [];
     id = '';
+    depth = -1;
+    parentIndex = -1;
 
     constructor(item) {
         this.item = item;
@@ -12,14 +14,19 @@ export default class Node {
         this.id = uuid();
     }
 
-    setChildren(treeModel) {
+    setChildren(treeModel, index) {
+        if (index >= 0) {
+            this.parentIndex = index;
+        } 
         const childData = treeModel.nodes[`node-${this.itemId}`];
+        let childIndex = 0;
         if (childData) {
             childData.ingredients.forEach((ingredient) => {
                 for (let i = 0; i < ingredient.count; i++) {
                     const child = new Node(treeModel.items[`item-${ingredient.item_id}`]);
                     this.children.push(child);
-                    child.setChildren(treeModel);
+                    child.setChildren(treeModel, childIndex);
+                    childIndex++;
                 }
             });
         }
@@ -42,22 +49,25 @@ export default class Node {
     }
 
     setDimension(dim, parentDepth) {
-        const depth = parentDepth + 1;
-        const depthKey = `depth-${depth}`;
+        this.depth = parentDepth + 1;
+        const depthKey = `depth-${this.depth}`;
         dim[depthKey] = dim[depthKey] || {
-            depth: depth,
+            depth: this.depth,
             count: 0
         }
         dim[depthKey].count = dim[depthKey].count + 1;
         this.children.forEach((child) => {
-            child.setDimension(dim, depth);
+            child.setDimension(dim, this.depth);
         })
     }
 
     getDetails(parent) {
         const data = {
             id: this.id,
-            item: this.item
+            item: this.item,
+            width: 32,
+            height: 32,
+            parentIndex: this.parentIndex
         }
         if (parent) {
             data.parent = parent;

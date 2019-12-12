@@ -34,10 +34,13 @@ export default class Startup {
             maxLevel: 80,
             text:''
         }
-        serverCall('recipes/13903').then((data) => {
-            // store.dispatch(setSearchResults(data.results));
-            store.dispatch(setRecipe(data));
-            store.dispatch(setState(State.DISPLAY_TREE));
+        serverCall('items/search', searchData)
+        // serverCall('recipes/13903')
+        .then((data) => {
+            store.dispatch(setSearchResults(data.results));
+            store.dispatch(setState(State.DISPLAY_RESULTS));
+            // store.dispatch(setRecipe(data));
+            // store.dispatch(setState(State.DISPLAY_TREE));
         })
     }
 }

@@ -4,6 +4,7 @@ import CurrencyDisplay from './CurrencyDisplay';
 import { addSpaces } from '../utils/addSpaces';
 import State from '../utils/state';
 import { setState } from '../actions/stateAction';
+import { setRecipe } from '../actions/recipeActions';
 import { serverCall } from '../services/requestService';
 
 export class ItemDisplay extends React.Component {
@@ -34,7 +35,7 @@ export class ItemDisplay extends React.Component {
     itemSelect = () => {
         this.props.setState(State.SEARCHING_RECIPE);
         serverCall(`recipes/${this.props.id}`).then((data) => {
-            // TODO: Set recipe to store (need to update the store for recipes first)
+            this.props.setRecipe(data);
             this.props.setState(State.DISPLAY_TREE);
         })
 
@@ -311,7 +312,8 @@ const Infusions = (props) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    setState: (state) => dispatch(setState(state))
+    setState: (state) => dispatch(setState(state)),
+    setRecipe: (recipe) => dispatch(setRecipe(recipe))
 });
 
 export default connect(undefined, mapDispatchToProps)(ItemDisplay);

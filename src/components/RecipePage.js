@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import TreeView from './TreeView';
 import State from '../utils/state';
 import { setState } from '../actions/stateAction';
+import { unsetRecipe } from '../actions/recipeActions';
+import { unsetMaterials } from '../actions/materialsAction';
 
 export class RecipePage extends React.Component {
     render() {
@@ -25,6 +27,8 @@ export class RecipePage extends React.Component {
 
     onBack = () => {
         this.props.setState(State.DISPLAY_RESULTS);
+        this.props.unsetMaterials();
+        this.props.unsetRecipe();
     }
 }
 
@@ -33,7 +37,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    setState: (state) => dispatch(setState(state))
+    setState: (state) => dispatch(setState(state)),
+    unsetRecipe: () => dispatch(unsetRecipe()),
+    unsetMaterials: () => dispatch(unsetMaterials())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipePage);

@@ -8,9 +8,15 @@ import { unsetMaterials } from '../actions/materialsAction';
 
 export class RecipePage extends React.Component {
     render() {
+        const item = this.props.recipe.recipe.items[`item-${this.props.recipe.recipe.root}`];
+        console.log(this.props.recipe.recipe.root)
         return (
             <div className="recipe-page">
-                <div onClick={this.onBack} className="recipe-page__header"><span>&larr;</span><span>Back</span></div>
+                <div onClick={this.onBack} className="recipe-page__header"><span>&larr;</span><span>Back</span>
+                    <span className={`recipe-page__header-name ${item.rarity.toLowerCase()}`}>
+                        {item.name.replace(/\&lsquo;/g, `'`)}
+                    </span>
+                </div>
                 <div className="recipe-page__content">
                     {this.props.recipe.status 
                         ? (<TreeView />)

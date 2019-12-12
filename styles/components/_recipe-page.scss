@@ -18,6 +18,10 @@
     }
 }
 
+.recipe-page__header-name {
+    margin-left: $l-size;
+}
+
 .recipe-page__content {
     flex-grow: 1;
     display: flex;

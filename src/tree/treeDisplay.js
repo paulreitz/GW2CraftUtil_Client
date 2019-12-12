@@ -16,8 +16,6 @@ export default class TreeDisplay {
                 this.baseHeight = dims[key].depth;
             }
         }
-        console.log('width ', this.baseWidth);
-        console.log('height ', this.baseHeight);
     }
 
     buildTree() {

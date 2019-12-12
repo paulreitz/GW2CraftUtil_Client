@@ -11,9 +11,7 @@ export class RecipePage extends React.Component {
                 <div onClick={this.onBack} className="recipe-page__header"><span>&larr;</span><span>Back</span></div>
                 <div className="recipe-page__content">
                     {this.props.recipe.status 
-                        ? (<div>
-                            <TreeView />
-                        </div>)
+                        ? (<TreeView />)
                         : (<div className="recipe-page--no-recipe">
                                 <div className="recipe-page--no-recipe__message">
                                 <div>The selected item is a base material</div>

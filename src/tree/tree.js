@@ -9,4 +9,20 @@ export default class Tree {
         this.root = new Node(treeModel.items[`item-${treeModel.root}`]);
         this.root.setChildren(treeModel);
     }
+
+    getBaseMaterials() {
+        let mats = {};
+        this.root.getBaseMaterials(mats);
+        return mats;
+    }
+
+    getDimensionObject() {
+        let dims = {};
+        this.root.setDimension(dims, 0);
+        return dims;
+    }
+
+    getDetails() {
+        return this.root.getDetails();
+    }
 }

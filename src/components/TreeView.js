@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Tree from '../tree/tree';
+import TreeDisplay from '../tree/treeDisplay';
 import { setMaterials } from '../actions/materialsAction';
 
 export class TreeView extends React.Component {
@@ -10,9 +11,10 @@ export class TreeView extends React.Component {
 
     render() {
         return (
-            <div>
-                this is a tree
-                {this.state.tree && (<div>The tree will be displayed</div>)}
+            <div className="tree-view">
+                <div className="tree-view__container">
+                    <div id="tree-view__display" />
+                </div>
             </div>
             )
     }
@@ -20,6 +22,14 @@ export class TreeView extends React.Component {
     componentDidMount() {
         const tree = new Tree(this.props.recipe.recipe);
         this.setState(() => ({tree}));
+        const mats = tree.getBaseMaterials();
+        const materials = [];
+        for (const key in mats) {
+            materials.push(mats[key]);
+        }
+        this.props.setMaterials(materials);
+        const treeDisplay = new TreeDisplay(tree);
+        treeDisplay.buildTree();
     }
 }
 

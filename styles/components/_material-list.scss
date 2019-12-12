@@ -1,5 +1,5 @@
 .materials-list {
-    width: 22rem;
+    width: 24rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -7,6 +7,38 @@
 
 .materials-list__title {
     text-align: center;
+}
+
+.materials-list--mats {
+    background: $darker-gray;
+}
+
+.materials-list--mats__container {
+    display: flex;
+    justify-content: start;
+}
+
+.materials-list--mats__count {
+    font-size: 2.2rem;
+    color: $gray;
+    margin: 0 $xs-size;
+    text-align: right;
+    min-width: 36px;
+
+}
+
+.materials-list--mats__display {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.materials-list--mats__icon {
+    margin-right: $xs-size;
+}
+
+.materials-list--mats__name {
+    flex-wrap: wrap;
 }
 
 .materials-list--no-mats {

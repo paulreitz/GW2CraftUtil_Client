@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import configureStore from '../store/configureStore';
 import { setState } from '../actions/stateAction';
 import { setSearchResults } from '../actions/searchActions';
+import { setRecipe } from '../actions/recipeActions';
 import State from '../utils/state';
 import { serverCall } from '../services/requestService';
 import Application from '../components/Application';
@@ -33,9 +34,10 @@ export default class Startup {
             maxLevel: 80,
             text:''
         }
-        serverCall('items/search', searchData).then((data) => {
-            store.dispatch(setSearchResults(data.results));
-            store.dispatch(setState(State.DISPLAY_RESULTS));
+        serverCall('recipes/13903').then((data) => {
+            // store.dispatch(setSearchResults(data.results));
+            store.dispatch(setRecipe(data));
+            store.dispatch(setState(State.DISPLAY_TREE));
         })
     }
 }

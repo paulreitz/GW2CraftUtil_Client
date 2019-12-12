@@ -84,18 +84,6 @@ export default class TreeDisplay {
             .attr('class', d => {
                 return `node ${d.children? 'node-internal' : 'node-leaf'}`
             });
-
-        // node.append('rect')
-        //     .attr('x', d => d.x - (d.data.width/2))
-        //     .attr('y', d => d.data.y)
-        //     .attr('width', d => d.data.width)
-        //     .attr('height', d => d.data.height)
-        //     .attr('style', d => {
-        //         const col = d.data.parentIndex % 2 == 1 ? d3.color('#666') : d3.color('#bbb')
-        //         return `fill:${col};strok-width:3;stroke:${d3.color(rarityColors[d.data.item.rarity])}`
-                
-        //         // `fill:white;strok-width:3;stroke:${rarityColors[d.data.item.rarity]}`;
-        //     })
         
         node.append('svg:image')
             .attr('x', d => d.data.x - 16)
@@ -106,13 +94,6 @@ export default class TreeDisplay {
             .attr('xlink:href', d => {
                 return d.data.item.icon;
             });
-
-        // node.append('text')
-        //     .attr('x', d => d.x - (d.data.width/2) + 38)
-        //     .attr('y', d => d.data.y + d.data.height / 2)
-        //     .style('text-anchor', 'left')
-        //     .attr('stroke', d => `${d3.color(rarityColors[d.data.item.rarity])};`)
-        //     .text(d => d.data.item.name.replace(/\&lsquo;/g, '\''))
             
     }
 }

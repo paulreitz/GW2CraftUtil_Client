@@ -5,6 +5,7 @@ import { setState } from '../actions/stateAction';
 import State from '../utils/state';
 import { serverCall } from '../services/requestService';
 import { addSpaces } from '../utils/addSpaces';
+import { unsetMaterials } from '../actions/materialsAction';
 
 export class SearchFilter extends React.Component {
 
@@ -48,6 +49,7 @@ export class SearchFilter extends React.Component {
         .then((results) => {
             this.props.setSearchResults(results.results);
             this.props.setState(State.DISPLAY_RESULTS);
+            this.props.unsetMaterials();
         });
     }
 
@@ -126,7 +128,8 @@ export class SearchFilter extends React.Component {
 
 const mapDispatchToProps = (dispatch) => ({
     setSearchResults: (results) => dispatch(setSearchResults(results)),
-    setState: (state) => dispatch(setState(state))
+    setState: (state) => dispatch(setState(state)),
+    unsetMaterials: () => dispatch(unsetMaterials())
 });
 
 export default connect(undefined, mapDispatchToProps)(SearchFilter)

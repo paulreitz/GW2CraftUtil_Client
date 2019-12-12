@@ -44,7 +44,7 @@ export class TreeView extends React.Component {
         treeDisplay.buildTree();
         const treeDisplayView = document.getElementById('tree-view__display');
         const container = document.getElementById('recipe-page__content').clientWidth / 2;
-        const center = document.getElementById('tree-view__display').clientWidth / 2;
+        const center = treeDisplay.rootX;
         const left = container - center;
         this.setState(() => {
             return {

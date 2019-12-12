@@ -5,6 +5,7 @@ export default class TreeDisplay {
     tree = undefined;
     baseWidth = 0;
     baseHeight = 0;
+    rootX = 0;
 
     constructor(tree) {
         this.tree = tree;
@@ -47,8 +48,8 @@ export default class TreeDisplay {
     }
 
     buildTree() {
-        const width = (this.baseWidth || 1) * 50;
-        const height = (this.baseHeight || 1) * 100;
+        const width = (this.baseWidth || 1) * 35;
+        const height = (this.baseHeight || 1) * 200;
         const data = this.tree.getDetails();
         const treemap = d3.tree().size([width, height]);
         const root = d3.hierarchy(data, (d) => {
@@ -68,16 +69,15 @@ export default class TreeDisplay {
             .data(root.links())
             .join('path')
             .attr('d', d => {
-                // console.log(d);
                 this.adjustNode(d.source);
                 this.adjustNode(d.target);
-                // console.log(`source x: ${d.source.data.x}, target x: ${d.target.data.x}`);
+                if (!d.source.parent) {
+                    this.rootX = d.source.data.x;
+                }
                 const str = `M${d.target.data.x},${d.target.data.y}C${(d.target.data.x+d.source.data.x)/2},${d.target.data.y} ${(d.target.data.x+d.source.data.x)/2},${d.source.data.y} ${d.source.data.x},${d.source.data.y}`
-                // console.log(str);
                 return str;
             });
-            // "M" + d.x + "," + d.y+ "C" + (d.x + d.parent.x) / 2 + "," + d.y + " " + (d.x + d.parent.x) / 2 + "," + d.parent.y + " " + d.parent.x + "," + d.parent.y;
-
+            
         const node = svg.selectAll('.node')
             .data(nodes.descendants())
             .enter().append('g')

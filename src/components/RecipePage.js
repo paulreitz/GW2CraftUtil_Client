@@ -12,20 +12,22 @@ export class RecipePage extends React.Component {
         console.log(this.props.recipe.recipe.root)
         return (
             <div className="recipe-page">
-                <div onClick={this.onBack} className="recipe-page__header"><span>&larr;</span><span>Back</span>
-                    <span className={`recipe-page__header-name ${item.rarity.toLowerCase()}`}>
-                        {item.name.replace(/\&lsquo;/g, `'`)}
-                    </span>
-                </div>
-                <div className="recipe-page__content">
-                    {this.props.recipe.status 
-                        ? (<TreeView />)
-                        : (<div className="recipe-page--no-recipe">
-                                <div className="recipe-page--no-recipe__message">
-                                <div>The selected item is a base material</div>
-                                <div>There is no crafting recipe for this item</div>
-                            </div>
-                        </div>)}
+                <div className="recipe-page__container">
+                    <div onClick={this.onBack} className="recipe-page__header"><span>&larr;</span><span>Back</span>
+                        <span className={`recipe-page__header-name ${item.rarity.toLowerCase()}`}>
+                            {item.name.replace(/\&lsquo;/g, `'`)}
+                        </span>
+                    </div>
+                    <div className="recipe-page__content">
+                        {this.props.recipe.status 
+                            ? (<TreeView />)
+                            : (<div className="recipe-page--no-recipe">
+                                    <div className="recipe-page--no-recipe__message">
+                                    <div>The selected item is a base material</div>
+                                    <div>There is no crafting recipe for this item</div>
+                                </div>
+                            </div>)}
+                    </div>
                 </div>
             </div>
         )

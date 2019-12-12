@@ -35,7 +35,7 @@ export default class Startup {
             text:''
         }
         // serverCall('items/search', searchData)
-        serverCall('recipes/47008')
+        serverCall('recipes/24535')
         .then((data) => {
             // store.dispatch(setSearchResults(data.results));
             // store.dispatch(setState(State.DISPLAY_RESULTS));

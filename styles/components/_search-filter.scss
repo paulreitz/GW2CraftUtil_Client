@@ -22,6 +22,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: $m-size;
+    animation: fadein .5s ease;
 
     label {
         font-size: 1.8rem;

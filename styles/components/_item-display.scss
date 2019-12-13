@@ -9,6 +9,7 @@
     padding-right: $s-size;
     color: $light-gray;
     border-width: 2px !important;
+    animation: fadein .5s ease;
 }
 
 .item-display__header {

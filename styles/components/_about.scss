@@ -3,6 +3,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    animation: fadein .5s ease;
 }
 
 .about__container {

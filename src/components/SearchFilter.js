@@ -38,11 +38,14 @@ export class SearchFilter extends React.Component {
         });
         const rarities = raritiesFull.filter(val => !! val);
 
+        const search = e.target.searchText.value;
+
         const data = {
             minLevel,
             maxLevel,
             types,
-            rarities
+            rarities,
+            search
         };
 
         serverCall('items/search', data)
@@ -112,7 +115,7 @@ export class SearchFilter extends React.Component {
                     <h3>Search Filters</h3>
                     <form onSubmit={this.onFilterUpdate} className="search-filter__form">
                         <div className="search-filter__form-group">
-                            <input type="text" placeholder="Text Search Disabled" />
+                            <input type="text" name="searchText" placeholder="Search Text" />
                         </div>
                         <div className="search-filter__form-group">
                             <div><label className="search-filter__form-label">Min Level: </label><input onChange={this.onMinLevelChange} name="minLevel" type="number" value={this.state.minLevel} /></div>

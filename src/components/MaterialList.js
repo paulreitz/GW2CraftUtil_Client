@@ -19,7 +19,7 @@ export class MaterialList extends React.Component {
                                     <div className="materials-list--mats__count">
                                         {mat.count}
                                     </div>
-                                    <div className={`materials-list--mats__display ${mat.item.rarity.toLowerCase()}`}>
+                                    <div className={`materials-list--mats__display ${mat.item.rarity.toLowerCase()}${mat.item.rarity === 'Basic'? '-inverse' : ''}`}>
                                         <img src={mat.item.icon} className={`materials-list--mats__icon ${mat.item.rarity.toLowerCase()}-border`} width={imageSize} height={imageSize} />
                                         <div className="materials-list--mats__name">
                                             {mat.item.name.replace(/\&lsquo;/g, `'`)}

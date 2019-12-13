@@ -1,12 +1,17 @@
+$info_size: 4rem;
+
 .header {
     background: darken($darker-gray, 20%);
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .header__content {
     align-items: center;
     display: flex;
-    // justify-content: center;
-    // padding: $s-size 0;
     margin-left: $m-size;
 }
 
@@ -17,4 +22,25 @@
     h2 {
         margin: 0;
     }
+}
+
+.header--info {
+    margin-top: $xs-size;
+    margin-right: 10rem;
+    cursor: pointer;
+}
+
+.header--info__circle {
+    border: 3px solid $gray;
+    border-radius: 50%;
+    width: $info_size;
+    height: $info_size;
+    text-align: center;
+    align-items: center;
+}
+
+.header--info__icon {
+    color: $gray;
+    font-size: 3rem;
+    line-height: 1.1;
 }

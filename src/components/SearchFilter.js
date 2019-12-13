@@ -120,11 +120,11 @@ export class SearchFilter extends React.Component {
                         </div>
                         <div className="search-filter__form-group">
                             <label className="search-filter__form-label">Filter by Type:</label>
-                            {this.state.types.map((type) => (<span key={type}><input type="checkbox" name={type} value={type}/>{addSpaces(type)}</span>))}
+                            {this.state.types && this.state.types.map((type) => (<span key={type}><input type="checkbox" name={type} value={type}/>{addSpaces(type)}</span>))}
                         </div>
                         <div className="search-filter__form-group">
                         <label className="search-filter__form-label">Filter by Rarity:</label>
-                            {this.state.rarities.map((rarity) => (<span key={rarity}><input type="checkbox" name={rarity} value={rarity} />{rarity}</span>))}
+                            {this.state.rarities && this.state.rarities.map((rarity) => (<span key={rarity}><input type="checkbox" name={rarity} value={rarity} />{rarity}</span>))}
                         </div>
                         <button className="button">Update Filters</button>
                     </form>

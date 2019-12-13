@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import { connect } from 'react-redux';
-import State from '../utils/state';
 import { setState } from '../actions/stateAction';
 
 export class About extends React.Component {
@@ -56,7 +55,7 @@ export class About extends React.Component {
     getDisclaimer() {
         return `
             This project was built for fun and practice, and as a demo of my skills.<br/>
-            This is not intended to be usable product.<br/>
+            This is not intended to be a usable product.<br/>
             I make no claims about the accuracy or usability of this site. 
             Nor do I make any promises to keep the database up to date.
             <p>

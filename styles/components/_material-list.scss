@@ -51,6 +51,11 @@
     display: flex;
     justify-content: start;
     align-items: center;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 }
 
 .materials-list--mats__icon {

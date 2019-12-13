@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { getWikiLink } from '../utils/wikiLink';
+import ReactHtmlParser from 'react-html-parser';
 
 export class MaterialList extends React.Component {
     render() {
@@ -22,7 +24,7 @@ export class MaterialList extends React.Component {
                                     <div className={`materials-list--mats__display ${mat.item.rarity.toLowerCase()}${mat.item.rarity === 'Basic'? '-inverse' : ''}`}>
                                         <img src={mat.item.icon} className={`materials-list--mats__icon ${mat.item.rarity.toLowerCase()}-border`} width={imageSize} height={imageSize} />
                                         <div className="materials-list--mats__name">
-                                            {mat.item.name.replace(/\&lsquo;/g, `'`)}
+                                            {ReactHtmlParser(this.buildItemName(mat.item.name.replace(/\&lsquo;/g, `'`)))}
                                         </div>
                                     </div>
                                 </div>
@@ -38,6 +40,11 @@ export class MaterialList extends React.Component {
                 </div>
             </aside>
         );
+    }
+
+    buildItemName(name) {
+        const link = getWikiLink(name);
+        return `<a href="${link}" target="_BLANK">${name}</a>`
     }
 }
 

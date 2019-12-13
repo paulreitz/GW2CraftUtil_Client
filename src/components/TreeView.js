@@ -11,6 +11,7 @@ export class TreeView extends React.Component {
         treeX: 0,
         treeY: 0
     }
+    
 
     render() {
         return (
